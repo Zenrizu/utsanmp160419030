@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mnc_navigation"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionToListObat"
+            app:destination="@id/listObatFragment" />
+        <action
+            android:id="@+id/action_itemHome_to_itemLogout"
+            app:destination="@id/itemLogout" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/itemList"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.listDokterFragment"
+        android:label="fragment_list_dokter"
+        tools:layout="@layout/fragment_list_dokter" >
+        <action
+            android:id="@+id/actionDetailDokter"
+            app:destination="@id/detailDokter" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDokter"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.detailDokter"
+        android:label="fragment_detail_dokter"
+        tools:layout="@layout/fragment_detail_dokter" >
+        <action
+            android:id="@+id/actionDetailtoReserve"
+            app:destination="@id/reservationFragment" />
+        <argument
+            android:name="idDoctor"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listObatFragment"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.ListObatFragment"
+        android:label="fragment_list_obat"
+        tools:layout="@layout/fragment_list_obat" />
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.ReservationFragment"
+        android:label="fragment_reservation"
+        tools:layout="@layout/fragment_reservation" >
+        <action
+            android:id="@+id/actionReservetoChat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/itemLogout"
+        android:name="id.ac.ubaya.informatika.mnchealthcare_160419030.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_itemHome"
+            app:destination="@id/itemHome" />
+    </fragment>
+</navigation>
